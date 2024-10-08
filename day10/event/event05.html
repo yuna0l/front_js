@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 05</title>
+</head>
+<body>
+    <form>
+        <div>
+            <label>
+                <span>아이디</span><input type="text" name="id" placeholder="아이디를 입력하세요."/>
+            </label>
+        </div>
+        <div>
+            <label>
+                <span>비밀번호</span><input type="password" name="password" placeholder="비밀번호를 입력하세요."/>
+            </label>
+        </div>
+
+        <button type="button">전송</button>
+    </form>
+</body>
+<!-- <script src="./js/event05.js"></script> -->
+<script>
+        //input
+    const inputs = document.querySelectorAll("input");
+    const button = document.querySelectorAll("button");
+    console.log(inputs);
+
+    // font-size를 25px로 키우기
+    // border의 스타일 변경하기
+    // width 200px
+    // height 40px
+
+    // 단, inputs[0] 방번호로 들고오지 않는다.
+    // inputs 반복문을 사용해서 변경하기
+
+
+    inputs.forEach((input) => {
+        input.style.fontsize = "25px";
+        input.style.border = "solid 2px green";
+        input.style.width = "200px";
+        input.style.height = "40px";
+
+        input.addEventListener("blur",(e) => {
+            console.log(e.target.value)
+        })
+    })
+
+    button.addEventListener("click", (e) => {
+        inputs.forEach((input) => {
+            console.log(input.value)
+        })
+    })
+</script>
+</html>
